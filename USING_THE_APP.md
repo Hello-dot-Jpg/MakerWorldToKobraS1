@@ -1,9 +1,14 @@
 # Using the Kobra S1 Optimizer
 
+You give it a 3MF file. It makes a new copy set up for your Kobra S1.
+Your original file stays as it is. You still slice and print with Anycubic
+Slicer Next as usual.
+
 ## Run the Windows executable
 
-1. On GitHub, open **Releases** and choose **0.4.1 beta**.
-2. Download `S1Optimizer-0.4.1-beta-windows-x64.zip` (not the source-code ZIP).
+1. On this GitHub page, click **Releases**, then **0.4.1 beta**.
+2. Under **Assets**, click `S1Optimizer-0.4.1-beta-windows-x64.zip`.
+   Ignore the two downloads called **Source code**; those are not the app.
 3. Right-click the downloaded ZIP, choose **Extract All**, and open the extracted
    folder. Keep its licence files with the app.
 4. Double-click `S1Optimizer-0.4.1-beta.exe`.
@@ -13,7 +18,34 @@ Windows security policy if Windows displays a warning. Install and set up
 Anycubic Slicer Next on the same PC first, so the app can find its S1 profiles.
 This app does not start prints, change firmware or send models to a printer.
 
-## Convert a 3MF
+## The normal job: convert a file
+
+You do not need to understand every setting. Start with these steps:
+
+1. Click **Browse 3MF…** and choose the file you downloaded.
+2. Pick the **Nozzle size (mm)** that is actually in your printer. For example,
+   choose **0.4** for a 0.4 mm nozzle. Under **Nozzle material**, choose
+   **hardened-steel** if that is what you have fitted.
+3. Click **Discover matching profiles** and wait for it to finish. A profile
+   is just a saved set of print settings. Check **Printer profile** says Kobra
+   S1 with your nozzle size. Choose the **Print profile** you want to use.
+4. Under **Filament assignments**, choose what you are printing with, such as
+   PLA or PETG. If there is more than one row, check each row.
+5. Leave the extra options alone for your first conversion. Click
+   **Review changes** and read the messages on the right. If it says something
+   is blocked, stop; do not guess a way around it.
+6. Click **Choose output…** to pick where the new file goes, then
+   **Export 3MF**. Give it a new name, such as `my_model_S1.3mf`.
+7. Open that new file in Anycubic Slicer Next. Check the nozzle, filament and
+   **Plate Type**, then slice. Look at **Preview** before printing.
+
+**Check the plate every time.** For the normal textured plate, it should say
+**Textured PEI Plate** in Anycubic. The slicer sometimes switches it back to
+your last-used plate, even though the converter requested PEI.
+
+That is the basic workflow. The sections below are only for extra choices.
+
+## More options and things to check
 
 Use the project-converter tab. The settings area on the left scrolls; the source
 summary, change report and export controls remain on the right.
@@ -29,7 +61,7 @@ summary, change report and export controls remain on the right.
    community-tuned preset. Expand the community-bundle section to add a profile
    3MF you obtained separately, then discover again.
 3. **Check filaments.** Assign a compatible filament to each source slot.
-   Slot order and colours matter for multicolour projects. Choose the material
+   Each row is one filament/colour in the original file. Choose the material
    you will actually print, not just a similarly named preset.
 4. **Choose optional changes.**
    - Layer height stays as in the source by default. Tick **Use print profile's
@@ -78,17 +110,19 @@ a converted 3MF; it does not change a 3MF's assignments.
    block export.
 4. Click **Review selected presets**, read the warnings, and then
    **Export presets…** to create a new folder of reviewed JSON/ZIP presets.
-   These are starting presets, not tested filament calibrations.
+   These are starting settings: you will still need to test and tune them
+   for your filament.
 5. To install with the app, **close Anycubic Slicer Next first**. Expand the
    install/restore section, click **Install reviewed export…**, select the
    reviewed export and read the confirmation. Installation checks collisions
    and creates an active-account filament backup. Keep the installation
-   manifest and backup location for recovery.
+   record file (`install-manifest.json`) and backup folder so you can undo it.
 6. Alternatively, import `importable-presets.zip` or the individual JSONs via
    Anycubic's **Import Configs** command. This manual method is not covered by
    the app's installation rollback.
 7. Restart the slicer and check the new profiles under each intended nozzle.
-   Verify temperatures, cooling, flow and material identity before use.
+   Check the temperatures and material are right before use. Test a small
+   print before trusting a new filament's settings on a long print.
 
 To undo an app-managed installation, close the slicer, choose
 **Restore an installation…** and select its installation manifest. Read the
