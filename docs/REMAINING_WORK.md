@@ -2,11 +2,13 @@
 
 User accepted plate warning for beta. Automatic plate selection remains known
 bug, no longer a beta blocking user decision. Windows portable executable
-built and smoke verified; see CHECKPOINT for path/hash. Signing, installer,
-licence/first commit/GitHub publication and physical calibration remain later.
+built and smoke verified; see local CHECKPOINT for path/hash. Signing,
+installer and physical calibration remain later. MIT licence, first commit,
+public GitHub repository and 0.4.1 beta release are COMPLETE; see
+PUBLICATION_CHECKLIST.md for remote links and verified hashes.
 
 Publication update: user approved public MakerWorldToKobraS1 + MIT on
-2026-10-01. Publication preparation is now in progress; see
+2026-10-01. Publication and hosted CI checks are now complete; see
 PUBLICATION_CHECKLIST.md. Latest UI release passes 216 tests. Earlier pending
 beta-decision entries below are historical, not current blockers.
 

@@ -1,5 +1,13 @@
 # Project handoff - current acceptance state
 
+Public beta published (2026-10-01):
+https://github.com/Hello-dot-Jpg/MakerWorldToKobraS1/releases/tag/v0.4.1-beta .
+Plain-English executable/UI instructions are in root USING_THE_APP.md and
+included in the ZIP. Public repository is MIT-licensed. Hosted CI passes all
+216 tests on Python 3.11/3.12/3.13; release assets and tag verified anonymously.
+Models/private presets/reports/research and the local checkpoint are excluded.
+Signing, installer and physical calibration remain outside this release.
+
 Latest UI release (2026-10-01):0.4.1-beta refreshes both tabs with a shared
 charcoal/blue theme, numbered cards, scrollable settings and separate source/
 review areas. Converter export controls stay visible. Advanced options are

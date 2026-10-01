@@ -14,7 +14,18 @@ Source published at https://github.com/Hello-dot-Jpg/MakerWorldToKobraS1 on
 main; GitHub reports public visibility and MIT licence. First hosted CI exposed
 a test comparing a Windows8.3 TEMP alias to the auditor's resolved long path.
 Corrected the test to compare resolved paths; application behavior unchanged.
-Hosted CI rerun and release asset readback remain required before completion.
+Hosted CI rerun PASS on Python 3.11, 3.12 and 3.13 (216 tests each):
+https://github.com/Hello-dot-Jpg/MakerWorldToKobraS1/actions/runs/36843642969 .
+
+Publication COMPLETE: public MIT repository and prerelease v0.4.1-beta:
+https://github.com/Hello-dot-Jpg/MakerWorldToKobraS1/releases/tag/v0.4.1-beta .
+Release tag points to 17656e934ecf933d1543e1ceda08af69503fc52b. Anonymous
+API readback confirms visibility, licence, tag, release state, root guide and
+uploaded asset digests. SHA256SUMS.txt accompanies the Windows x64 ZIP.
+ZIP SHA256: 323c0fe144a509cece72156bff19d301d8e6b6ca0f9949eb31848e5a7438b2fd.
+EXE SHA256: 3a03473a1edca37d2d2b02adcf10e523a9ae677e58529930835def6fb13eda70.
+No models, private presets, research, reports or build logs were published.
+GitHub noreply email was used for these commits; global git identity unchanged.
 
 - Keep `reports/`, downloaded 3MFs and `.research/` excluded by `.gitignore`.
 - Use neutral user/workspace paths in public documentation. Keep the local
