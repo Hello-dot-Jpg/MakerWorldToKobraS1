@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="330" viewBox="0 0 1040 330" role="img" aria-labelledby="title desc">
+  <title id="title">Download, extract, open</title>
+  <desc id="desc">Click the Windows ZIP under Assets. Right-click it and choose Extract All. Open the new folder and double-click S1Optimizer-0.4.1-beta.exe.</desc>
+  <rect width="1040" height="330" rx="20" fill="#171b22"/>
+  <g font-family="Segoe UI,Arial,sans-serif" fill="#edf2f8">
+    <g transform="translate(20 22)">
+      <rect width="306" height="284" rx="14" fill="#222832"/>
+      <circle cx="32" cy="34" r="19" fill="#0074d9"/>
+      <text x="32" y="41" text-anchor="middle" font-size="21" font-weight="700">1</text>
+      <text x="62" y="41" font-size="23" font-weight="700">Download</text>
+      <text x="22" y="84" font-size="18">On the release page:</text>
+      <text x="22" y="120" font-size="21" font-weight="700">Assets</text>
+      <rect x="16" y="138" width="274" height="65" rx="8" fill="#0074d9"/>
+      <text x="28" y="164" font-size="17">S1Optimizer-0.4.1-beta</text>
+      <text x="28" y="188" font-size="17">-windows-x64.zip</text>
+      <text x="22" y="239" font-size="17" fill="#b0bdce">Not the “Source code” files.</text>
+    </g>
+    <path d="M334 158h29m-11-11 11 11-11 11" fill="none" stroke="#69b3ff" stroke-width="5"/>
+    <g transform="translate(367 22)">
+      <rect width="306" height="284" rx="14" fill="#222832"/>
+      <circle cx="32" cy="34" r="19" fill="#0074d9"/>
+      <text x="32" y="41" text-anchor="middle" font-size="21" font-weight="700">2</text>
+      <text x="62" y="41" font-size="23" font-weight="700">Unzip</text>
+      <text x="22" y="84" font-size="18">Right-click the ZIP.</text>
+      <rect x="18" y="116" width="270" height="108" rx="8" fill="#2c3441"/>
+      <text x="34" y="146" font-size="18" fill="#b0bdce">Open</text>
+      <rect x="24" y="160" width="258" height="44" rx="6" fill="#0074d9"/>
+      <text x="38" y="189" font-size="22" font-weight="700">Extract All…</text>
+      <text x="22" y="255" font-size="17">Then open the new folder.</text>
+    </g>
+    <path d="M680 158h29m-11-11 11 11-11 11" fill="none" stroke="#69b3ff" stroke-width="5"/>
+    <g transform="translate(714 22)">
+      <rect width="306" height="284" rx="14" fill="#222832"/>
+      <circle cx="32" cy="34" r="19" fill="#0074d9"/>
+      <text x="32" y="41" text-anchor="middle" font-size="21" font-weight="700">3</text>
+      <text x="62" y="41" font-size="23" font-weight="700">Open the app</text>
+      <rect x="22" y="98" width="52" height="58" rx="8" fill="#0074d9"/>
+      <path d="M32 143 48 110l16 33M37 133h22" fill="none" stroke="white" stroke-width="5"/>
+      <text x="22" y="190" font-size="17">S1Optimizer-0.4.1-beta.exe</text>
+      <text x="22" y="229" font-size="21" font-weight="700">Double-click this file.</text>
+      <text x="22" y="255" font-size="17" fill="#b0bdce">No install needed.</text>
+    </g>
+  </g>
+</svg>

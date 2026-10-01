@@ -1,148 +1,112 @@
 # Using the Kobra S1 Optimizer
 
-You give it a 3MF file. It makes a new copy set up for your Kobra S1.
-Your original file stays as it is. You still slice and print with Anycubic
-Slicer Next as usual.
+This app takes a 3MF project and makes a new copy for your Kobra S1. It does
+not change the file you started with, start a print, or send anything to your
+printer. You still open the new file in Anycubic Slicer Next and check it
+before printing.
 
-## Run the Windows executable
+Before you begin, install and set up Anycubic Slicer Next on this computer,
+with a Kobra S1 printer ready in it. The app uses the printer profiles already
+installed by the slicer. If you have not set up the S1 in Anycubic yet, do
+that first.
 
-1. On this GitHub page, click **Releases**, then **0.4.1 beta**.
-2. Under **Assets**, click `S1Optimizer-0.4.1-beta-windows-x64.zip`.
-   Ignore the two downloads called **Source code**; those are not the app.
-3. Right-click the downloaded ZIP, choose **Extract All**, and open the extracted
-   folder. Keep its licence files with the app.
-4. Double-click `S1Optimizer-0.4.1-beta.exe`.
+## 1. Download and open the app
 
-You do not need Python or an installer. The app is unsigned; follow your normal
-Windows security policy if Windows displays a warning. Install and set up
-Anycubic Slicer Next on the same PC first, so the app can find its S1 profiles.
-This app does not start prints, change firmware or send models to a printer.
+[Open the download page](https://github.com/Hello-dot-Jpg/MakerWorldToKobraS1/releases/tag/v0.4.1-beta).
+Under **Assets**, download `S1Optimizer-0.4.1-beta-windows-x64.zip`. Do not
+download either file called **Source code**; those files are not the Windows
+app.
 
-## The normal job: convert a file
+![Illustration: download the Windows ZIP, choose Extract All, then open the app](docs/images/download-open.svg)
 
-You do not need to understand every setting. Start with these steps:
+When the download is done, right-click the ZIP file and choose **Extract All**.
+Open the folder Windows made, then double-click
+`S1Optimizer-0.4.1-beta.exe`. Keep the licence files in that folder. You do not
+need Python or a separate installer. Windows may show a security warning
+because the app is unsigned; follow your usual Windows security rules.
 
-1. Click **Browse 3MF…** and choose the file you downloaded.
-2. Pick the **Nozzle size (mm)** that is actually in your printer. For example,
-   choose **0.4** for a 0.4 mm nozzle. Under **Nozzle material**, choose
-   **hardened-steel** if that is what you have fitted.
-3. Click **Discover matching profiles** and wait for it to finish. A profile
-   is just a saved set of print settings. Check **Printer profile** says Kobra
-   S1 with your nozzle size. Choose the **Print profile** you want to use.
-4. Under **Filament assignments**, choose what you are printing with, such as
-   PLA or PETG. If there is more than one row, check each row.
-5. Leave the extra options alone for your first conversion. Click
-   **Review changes** and read the messages on the right. If it says something
-   is blocked, stop; do not guess a way around it.
-6. Click **Choose output…** to pick where the new file goes, then
-   **Export 3MF**. Give it a new name, such as `my_model_S1.3mf`.
-7. Open that new file in Anycubic Slicer Next. Check the nozzle, filament and
-   **Plate Type**, then slice. Look at **Preview** before printing.
+## 2. Open the project you want to convert
 
-**Check the plate every time.** For the normal textured plate, it should say
-**Textured PEI Plate** in Anycubic. The slicer sometimes switches it back to
-your last-used plate, even though the converter requested PEI.
+Click **Browse 3MF…** and choose the 3MF project you downloaded. This loads the
+project and shows details about the original file in **Original project**.
+You can also paste a file path into the box and press Enter.
 
-That is the basic workflow. The sections below are only for extra choices.
+![Illustration: click Browse 3MF to choose the project](docs/images/open-file.svg)
 
-## More options and things to check
+The original file is kept as it is. If you load a different project later,
+the app resets the conversion choices. Check your choices again after loading
+another file.
 
-Use the project-converter tab. The settings area on the left scrolls; the source
-summary, change report and export controls remain on the right.
+## 3. Choose the nozzle and print settings
 
-1. **Open your file.** Click **Browse 3MF…** and select the original project.
-   Alternatively, paste its full path into the source box and press **Enter**.
-   Check **Original project** for the source nozzle, layer height and materials.
-   Loading another file resets the conversion settings; recheck your choices.
-2. **Choose your setup.** Select your physical **Nozzle size (mm)** and
-   **Nozzle material**, then click **Discover matching profiles**. Check the
-   suggested printer and print profile. Select a community profile if you have
-   it available; selecting hardened steel alone does not install or create a
-   community-tuned preset. Expand the community-bundle section to add a profile
-   3MF you obtained separately, then discover again.
-3. **Check filaments.** Assign a compatible filament to each source slot.
-   Each row is one filament/colour in the original file. Choose the material
-   you will actually print, not just a similarly named preset.
-4. **Choose optional changes.**
-   - Layer height stays as in the source by default. Tick **Use print profile's
-     layer height** to adopt the selected profile's height, or enter a custom
-     height in mm. Clear a custom height when you no longer want it.
-   - **Plate Type** defaults to **Textured PEI Plate**; choose another if needed.
-   - **Nice supports - beta** applies the reviewed support overlay. It is off
-     by default; inspect supports in the slicer's Preview.
-   - **Scale to fit S1 plate** shrinks oversized plates only. It changes part
-     dimensions, so leave it off for parts whose size must stay exact.
-   - Advanced hotend settings record the hardware choice. Only enter a
-     temperature ceiling you have confirmed for your hardware and firmware.
-5. Click **Review changes**. Read warnings and any blockers in the report.
-   Review does not create a converted project or modify installed presets.
-6. Check the output path or click **Choose output…**, then **Export 3MF**.
-   The app creates a new project and a change report. It never overwrites your
-   source or an existing output; choose a new filename if one already exists.
-7. Open the new file in Anycubic Slicer Next. Confirm the printer, nozzle,
-   process height, materials and colour assignments. Check every plate you
-   intend to print, slice it, and inspect supports, prime tower and toolpaths
-   in Preview before printing.
+Look at the nozzle fitted to your printer. Choose that size under **Nozzle
+size (mm)**. For example, if your nozzle is 0.4 mm, choose **0.4**. Choose the
+right **Nozzle material** too. Then click **Discover matching profiles** and
+wait for the search to finish.
 
-**Important plate warning:** Anycubic may restore its remembered plate choice
-instead of the exported choice. Always check **Plate Type** in the slicer and
-the resulting bed temperature. The converter's warning is not a fix for this
-slicer behavior.
+![Illustration: choose a nozzle and find matching profiles](docs/images/nozzle-profiles.svg)
 
-The exported `[Optimized]` process is project-local. The original process is
-kept as a reference for comparison, not as a safe selectable S1 print preset.
-Successful conversion or slicing is not physical material calibration.
+Check **Printer profile** shows your Kobra S1 and nozzle size. Then choose a
+**Print profile**. A print profile is a saved group of printing settings. The
+picture uses a 0.4 mm hardened-steel nozzle as an example; choose what is
+actually fitted to your printer. Selecting **hardened-steel** by itself does
+not add special community settings. See [Extra choices and fixes](docs/EXTRA_OPTIONS.md)
+if you have a community profile bundle.
 
-## Import standalone filament presets
+The original file's layer height stays in use by default, even after you choose a
+print profile. Turn on **Use print profile's layer height** only if you want to
+use the height saved in that print profile. You can instead enter a number in
+**Custom layer height (mm)**. If you are unsure, leave these settings alone.
 
-Use **Filament library · beta**. This is separate from assigning filaments in
-a converted 3MF; it does not change a 3MF's assignments.
+## 4. Choose the filament
 
-1. Obtain the filament presets separately (for example, from Siddament).
-   Add them with **JSON files…**, **Folder…**, **Bundle…** or **INI file…**.
-   All added presets are initially selected; Ctrl/Shift changes the selection.
-2. Click **Find installed S1 printers**. Select the destination nozzle size(s)
-   with Ctrl/Shift, then choose nozzle material and hotend.
-3. Confirm **Nozzle ceiling (°C)** and **Bed ceiling (°C)** for your actual
-   setup. Do not copy another person's hardware limits blindly. The firmware
-   confirmation option is only for a change you have already made; this app
-   never changes firmware. Unknown limits or unmatched material bases can
-   block export.
-4. Click **Review selected presets**, read the warnings, and then
-   **Export presets…** to create a new folder of reviewed JSON/ZIP presets.
-   These are starting settings: you will still need to test and tune them
-   for your filament.
-5. To install with the app, **close Anycubic Slicer Next first**. Expand the
-   install/restore section, click **Install reviewed export…**, select the
-   reviewed export and read the confirmation. Installation checks collisions
-   and creates an active-account filament backup. Keep the installation
-   record file (`install-manifest.json`) and backup folder so you can undo it.
-6. Alternatively, import `importable-presets.zip` or the individual JSONs via
-   Anycubic's **Import Configs** command. This manual method is not covered by
-   the app's installation rollback.
-7. Restart the slicer and check the new profiles under each intended nozzle.
-   Check the temperatures and material are right before use. Test a small
-   print before trusting a new filament's settings on a long print.
+Under **Filament assignments**, choose the material that is really on your
+spool, such as PLA or PETG. If the project has more than one row, each row is
+one filament used by the project. Check every row and choose the right
+material for each one.
 
-To undo an app-managed installation, close the slicer, choose
-**Restore an installation…** and select its installation manifest. Read the
-confirmation and result; rollback is quarantined and may refuse unsafe
-collisions or changed files. Do not manually overwrite live preset folders.
+![Illustration: choose the material that is on your spool](docs/images/filament.svg)
 
-## If something does not work
+These choices assign filaments to this project. They do not add new presets to
+Anycubic's filament list. For adding separate filament presets, use the
+instructions on the [extra choices page](docs/EXTRA_OPTIONS.md).
 
-- **No profiles found:** set up an S1 printer in Anycubic Slicer Next, then
-  retry discovery. A community bundle does not replace the required installed
-  machine/process/filament directories.
-- **A part is outside the bed:** inspect the report. Use scale-to-fit only if
-  changing dimensions is acceptable; otherwise rearrange/split the project.
-- **Export blocked or an unexpected slicer warning:** stop and read the exact
-  message. Do not approve unexplained machine G-code or raise temperature
-  limits just to make the warning disappear.
-- **Want to report a bug:** include the app version, chosen nozzle/profile,
-  exact message and change report. Remove private paths or settings first;
-  do not upload someone else's model without permission.
+## 5. Review, then save a new file
 
-For source users with Python 3.11+, double-click `run_gui.cmd` from the cloned
-repository. CLI/setup details are in [README.md](README.md) and
-[docs/USAGE.md](docs/USAGE.md).
+Click **Review changes**. This checks your choices and shows messages in the
+report. Review does not save or create a converted project. Read the messages.
+If anything is blocked, stop and find out why; do not guess a way around it.
+
+![Illustration: review the changes and choose a new file name](docs/images/review-save.svg)
+
+Check the output path on the right, or click **Choose output…** to pick a
+folder and file name. Choose a new name, such as `my_model_S1.3mf`. The app
+will not overwrite your original project or an existing output file. When the
+name is ready, click **Export 3MF**. This is the step that saves the new
+project. Keep the change report with it so you can see what the app changed.
+
+## 6. Open and check the new project
+
+Open the new 3MF file in Anycubic Slicer Next. Before slicing, check the
+printer and nozzle, the material and temperature settings, and **Plate Type**.
+For the usual textured plate, choose **Textured PEI Plate**. Anycubic can
+switch back to the last plate you used, so check this every time.
+
+![Illustration: check the plate in Anycubic before slicing and opening Preview](docs/images/check-plate.svg)
+
+If the project has more than one plate, check every plate you plan to print.
+Slice the project, then look at **Preview**. Check the model, supports, and
+the paths the nozzle will follow. Stop if Anycubic shows a printer G-code
+warning you do not understand. G-code is the printer's instructions; do not
+approve unknown printer commands just to continue.
+
+The project contains a print profile named **[Optimized]** for the converted
+project. The original settings are kept only for comparison, not as another
+print choice. They are not safe to print as-is on the S1. Conversion and slicing do not
+test your filament or prove that its temperatures are right. Check the
+settings against your printer and filament before printing.
+
+The pictures on this page are labelled illustrations of the buttons, not
+screenshots. The app may look a little different on your computer.
+
+[Need extra settings, community profiles, filament imports or help with a warning?](docs/EXTRA_OPTIONS.md)

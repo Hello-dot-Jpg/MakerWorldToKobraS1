@@ -6,7 +6,8 @@ Also includes a separate filament-preset conversion, install and rollback tool.
 
 ## Quick start
 
-Step-by-step desktop and executable instructions: **[USING_THE_APP.md](USING_THE_APP.md)**.
+**New here? [Start with the picture guide](USING_THE_APP.md).**
+Short steps, big pictures, and the extra settings on a separate page.
 
 Download the **0.4.1 beta Windows ZIP** from this repository's **Releases** page,
 extract it, and run `S1Optimizer-0.4.1-beta.exe`. No Python installation needed.

@@ -10,6 +10,8 @@ import tempfile
 import tomllib
 import zipfile
 
+from build_picture_guide import render as render_picture_guide
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -39,6 +41,7 @@ def main():
         bundle.write(executable, executable.name)
         for filename in ("README.md", "USING_THE_APP.md", "LICENSE", "THIRD_PARTY_NOTICES.md"):
             bundle.write(repo / filename, filename)
+        bundle.writestr("START_HERE.html", render_picture_guide(repo))
         for path in notices:
             bundle.write(path, f"licenses/{path.name}")
         # Include the public documentation linked from README/user instructions.
@@ -46,6 +49,9 @@ def main():
         for path in sorted((repo / "docs").glob("*.md")):
             if path.name != "CHECKPOINT.md":
                 bundle.write(path, f"docs/{path.name}")
+        for path in sorted((repo / "docs" / "images").glob("*")):
+            if path.is_file() and path.suffix.lower() in {".png", ".svg", ".jpg"}:
+                bundle.write(path, f"docs/images/{path.name}")
         bundle.write(repo / "docs" / f"RELEASE_NOTES_{version}.md", "RELEASE_NOTES.md")
         bundle.writestr("release-manifest.json", json.dumps(manifest, indent=2) + "\n")
     with zipfile.ZipFile(archive) as bundle:
