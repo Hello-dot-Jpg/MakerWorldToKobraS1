@@ -41,6 +41,11 @@ def main():
             bundle.write(repo / filename, filename)
         for path in notices:
             bundle.write(path, f"licenses/{path.name}")
+        # Include the public documentation linked from README/user instructions.
+        # The machine-specific operational checkpoint is deliberately local-only.
+        for path in sorted((repo / "docs").glob("*.md")):
+            if path.name != "CHECKPOINT.md":
+                bundle.write(path, f"docs/{path.name}")
         bundle.write(repo / "docs" / f"RELEASE_NOTES_{version}.md", "RELEASE_NOTES.md")
         bundle.writestr("release-manifest.json", json.dumps(manifest, indent=2) + "\n")
     with zipfile.ZipFile(archive) as bundle:

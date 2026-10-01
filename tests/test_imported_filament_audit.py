@@ -59,7 +59,9 @@ class ImportedFilamentAuditTests(unittest.TestCase):
             result = self.run_audit(export, user_root)
             evidence = json.loads(result.stdout)
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-            self.assertEqual(Path(evidence["resolved_installed_folder"]), installed)
+            # Windows runners may expose TEMP through an 8.3 path alias.
+            # The auditor deliberately reports the resolved long path.
+            self.assertEqual(Path(evidence["resolved_installed_folder"]), installed.resolve())
 
     def test_user_root_with_ambiguous_matching_stores_fails(self):
         with tempfile.TemporaryDirectory() as root:

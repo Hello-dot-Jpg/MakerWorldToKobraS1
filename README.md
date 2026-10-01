@@ -13,6 +13,8 @@ extract it, and run `S1Optimizer-0.4.1-beta.exe`. No Python installation needed.
 Anycubic Slicer Next and its local profiles are required for profile discovery.
 The executable is unsigned; follow your normal Windows security policy.
 
+Download page: **[Windows app · 0.4.1 beta](https://github.com/Hello-dot-Jpg/MakerWorldToKobraS1/releases/tag/v0.4.1-beta)**.
+
 1. Browse to a 3MF (or paste its path and press Enter).
 2. Discover profiles and select your nozzle, machine, process and filaments.
 3. Review the changes, then export a new copy. Your source is not overwritten.

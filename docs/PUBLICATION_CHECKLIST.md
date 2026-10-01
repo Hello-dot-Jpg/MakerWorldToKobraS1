@@ -10,8 +10,11 @@ Preparation:
 Preflight PASS:216 tests (14.801s), compile, package release-check-am4qeo8x,
 staged secret/model exclusions, runtime notices, ZIP CRC and executable hash.
 Root USING_THE_APP.md explains both UI workflows and executable startup.
-GitHub authentication is available for Hello-dot-Jpg. Remote publication and
-asset readback are the remaining steps.
+Source published at https://github.com/Hello-dot-Jpg/MakerWorldToKobraS1 on
+main; GitHub reports public visibility and MIT licence. First hosted CI exposed
+a test comparing a Windows8.3 TEMP alias to the auditor's resolved long path.
+Corrected the test to compare resolved paths; application behavior unchanged.
+Hosted CI rerun and release asset readback remain required before completion.
 
 - Keep `reports/`, downloaded 3MFs and `.research/` excluded by `.gitignore`.
 - Use neutral user/workspace paths in public documentation. Keep the local
