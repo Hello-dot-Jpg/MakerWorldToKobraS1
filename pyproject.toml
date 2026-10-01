@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "s1-optimizer"
+version = "0.4.1"
+description = "Safety-first MakerWorld/Bambu 3MF inspection and Anycubic Kobra S1 retargeting"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+authors = [{ name = "Justin" }]
+dependencies = []
+
+[project.scripts]
+3mf-inspect = "s1_optimizer.cli:main"
+s1optimizer = "s1_optimizer.cli:main"
+s1optimizer-gui = "s1_optimizer.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

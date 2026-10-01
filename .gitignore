@@ -1,0 +1,30 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+dist/
+build/
+
+# Real 3MF projects can contain copyrighted models or personal slicer settings.
+*.3mf
+!tests/fixtures/*.3mf
+
+# Generated comparison output.
+reports/
+
+# Temporary upstream source checkouts used for design research. Third-party
+# code is not vendored into this repository without an explicit licence review.
+.research/
+
+# Local operational diary contains machine-specific paths and session state.
+/docs/CHECKPOINT.md
+
+# Never publish local secrets or credentials.
+.env
+.env.*
+*.pem
+*.key
